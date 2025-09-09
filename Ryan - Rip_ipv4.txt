@@ -1,0 +1,30 @@
+en
+conf t
+
+no ip domain-lookup
+Ipv6 unicast-routing
+hostname R1
+enable secret class
+service password-encryption
+
+
+line console 0
+password cisco
+login
+
+line vty 0 15
+password cisco
+login
+
+interface GigabitEthernet 0/1
+ip address 192.168.1.1 255.255.255.0
+description Link to S1
+no shutdown
+
+Router rip
+Version 2
+No auto-summary
+Passive-interface default
+No pass
+Network
+Default-information originate

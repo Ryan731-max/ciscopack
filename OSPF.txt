@@ -1,0 +1,14 @@
+
+en 
+
+conf t
+
+  ipv6 unicast-routing 
+  ipv6 router ospf 10
+  router-id 1.1.1.1
+  passive-interface default 
+  no passive-interface g0/1
+  no passive-interface g0/0
+  default-information originate 
+
+

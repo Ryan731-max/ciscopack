@@ -1,0 +1,244 @@
+en
+erase startup-config
+
+delete vlan.dat
+
+reload
+
+en
+conf t
+
+no ip domain-lookup
+
+hostname SWC
+
+service password-encryption
+do write
+
+
+
+line console 0
+password cisco
+login
+
+line vty 0 15
+password cisco
+login
+
+
+terminal history size 256
+sh history
+
+
+
+interface g0/2
+description routed Port Link to R1
+no switchport
+ip address 192.168.200.225 255.255.255.252
+no shutdown
+Ipv6 unicast-routing
+
+
+interface vlan 10 
+ip address 192.168.10.254 255.255.255.0
+ip default-gateway 192.168.200.225
+
+
+interface vlan 20 
+ip address 192.168.20.254 255.255.255.0
+ip default-gateway 192.168.200.225
+
+
+interface vlan 30 
+ip address 192.168.30.254 255.255.255.0
+ip default-gateway 192.168.200.225
+
+
+interface vlan 99 
+ip address 192.168.200.225 255.255.255.0
+ip default-gateway 192.168.200.225
+en
+erase startup-config
+
+delete vlan.dat
+
+reload
+
+en
+conf t
+
+no ip domain-lookup
+
+hostname SWC
+
+service password-encryption
+do write
+
+--------------------
+logging 
+------------------
+
+line console 0
+password cisco
+login
+
+line vty 0 15
+password cisco
+login
+
+
+terminal history size 256
+sh history
+
+
+
+interface g0/2
+description routed Port Link to R1
+dddsssssno switchport
+ip address 192.168.200.225 255.255.255.252
+no shutdown
+Ipv6 unicast-routing
+
+
+interface vlan 10 
+ip address 192.168.10.254 255.255.255.0
+ip default-gateway 192.168.200.225
+
+
+interface vlan 20 
+ip address 192.168.20.254 255.255.255.0
+ip default-gateway 192.168.200.225
+
+
+interface vlan 30 
+ip address 192.168.30.254 255.255.255.0
+ip default-gateway 192.168.200.225
+
+
+interface vlan 99 
+ip address 192.168.200.225 255.255.255.0
+ip default-gateway 192.168.200.225
+
+en
+erase startup-config
+
+delete vlan.dat
+
+reload
+
+en
+conf t
+
+no ip domain-lookup
+
+hostname SWC
+
+service password-encryption
+do write
+
+--------------------
+logging 
+------------------
+
+line console 0
+password cisco
+login
+
+line vty 0 15
+password cisco
+login
+
+
+terminal history size 256
+sh history
+
+
+
+interface g0/2
+description routed Port Link to R1
+no switchport
+ip address 192.168.200.225 255.255.255.252
+no shutdown
+Ipv6 unicast-routing
+
+
+interface vlan 10 
+ip address 192.168.10.254 255.255.255.0
+ip default-gateway 192.168.200.225
+
+
+interface vlan 20 
+ip address 192.168.20.254 255.255.255.0
+ip default-gateway 192.168.200.225
+
+
+interface vlan 30 
+ip address 192.168.30.254 255.255.255.0
+ip default-gateway 192.168.200.225
+
+
+interface vlan 99 
+ip address 192.168.200.225 255.255.255.0
+ip default-gateway 192.168.200.225
+en
+erase startup-config
+
+delete vlan.dat
+
+reload
+
+en
+conf t
+
+no ip domain-lookup
+
+hostname SWC
+
+service password-encryption
+do write
+
+--------------------
+logging 
+------------------
+
+line console 0
+password cisco
+login
+
+line vty 0 15
+password cisco
+login
+
+
+terminal history size 256
+sh history
+
+
+
+interface g0/2
+description routed Port Link to R1
+dddsssssno switchport
+ip address 192.168.200.225 255.255.255.252
+no shutdown
+Ipv6 unicast-routing
+
+
+interface vlan 10 
+ip address 192.168.10.254 255.255.255.0
+ip default-gateway 192.168.200.225
+
+
+interface vlan 20 
+ip address 192.168.20.254 255.255.255.0
+ip default-gateway 192.168.200.225
+
+
+interface vlan 30 
+ip address 192.168.30.254 255.255.255.0
+ip default-gateway 192.168.200.225
+
+
+interface vlan 99 
+ip address 192.168.200.225 255.255.255.0
+ip default-gateway 192.168.200.225
+

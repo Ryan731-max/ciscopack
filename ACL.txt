@@ -1,0 +1,55 @@
+﻿access-list 100 remark "tcp/ip"
+access-list 100 permit icmp 172.22.34.64 0.0.0.31 172.22.34.62 0.0.0.63
+access-list 100 permit tcp 172.22.34.64 0.0.0.31 172.22.34.62 0.0.0.63 eq ftp
+
+
+     deny tcp 172.31.1.101 0.0.0.31 host 64.101.255.254 eq www
+     deny tcp 172.31.1.101 0.0.0.31 host 64.103.255.254 eq www
+     deny tcp 172.31.1.101 0.0.0.31 host 64.101.255.254 eq 443
+     deny tcp 172.31.1.101 0.0.0.31 host 64.103.255.254 eq 443
+     deny tcp 172.31.1.102 0.0.0.31 host 64.101.255.254 eq ftp
+     deny tcp 172.31.1.102 0.0.0.31 host 64.103.255.254 eq ftp
+     deny icmp 172.31.1.103 0.0.0.31 host 64.101.255.254
+     deny icmp 172.31.1.103 0.0.0.31 host 64.103.255.254
+     permit tcp any any
+     permit icmp any any
+
+
+
+en
+conf t
+access-list 1 Remark Allow R1 LANs Access
+access-list 1 permit 192.168.10.0 0.0.0.255
+access-list 1 permit 192.168.20.0 0.0.0.255
+access-list 1 deny any
+int g0/0/0
+ip access-group 1 out
+
+
+en
+conf t
+ip access-list standard BRANCH‑OFFICE-POLICY 
+Remark 2eACL
+permit 192.168.40.0 0.0.0.255
+permit 209.165.200.225 0.0.255.255
+deny any
+int g0/0/0
+ip access-group BRANCH‑OFFICE-POLICY out
+
+
+en
+conf t
+no ip access-list standard BRANCH‑OFFICE-POLICY 
+no Remark 2eACL
+no permit 192.168.40.0 0.0.0.255
+no permit 209.165.200.224 0.0.0.255
+no deny any
+int g0/0/0
+no ip access-group BRANCH‑OFFICE-POLICY out
+
+en
+conf t
+access-list 1 deny 192.168.10.0 0.0.0.0
+access-list 1 permit any
+int g0/0
+ip access-group 1 out

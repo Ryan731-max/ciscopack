@@ -1,0 +1,13 @@
+
+VLAN 
+__________________________________________________________________________
+
+vlan 10
+name Sales
+vlan 20
+name Production
+vlan 30
+name Marketing
+vlan 40
+name HR
+

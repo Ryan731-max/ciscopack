@@ -1,0 +1,48 @@
+A C L ------------------------------------
+do sh run | include interface|access
+no access-lists 
+
+
+no switchport
+
+do show ip int br
+do show ip int br
+
+C R E A T E   V L A N ---------------------------------
+conf t
+vlan 20 ================================================
+name student
+end
+
+F O R   F A S T   E T H E R N E T ------------------------------------
+conf t
+interface fa0/1 ================================================
+switchport mode access 
+switchport access vlan 10
+end
+
+
+T R U N K    ALL ----------------------------------------
+conf t
+interface vlan 1 ================================================
+switchport mode trunk 
+switchport trunk native vlan 1 ================================================
+switch port trunk allowed vlan 1 ================================================
+end 
+
+
+V T P ----------------------------------------
+conf p
+vtp mode ?
+vtp mode server
+vtp mode client
+vtp prunning
+
+
+T R U N K  I : sur SWITCH-ROUTER ----------------------------------------
+conf t
+interface G0/1 ================================================
+switchport mode trunk 
+switchport trunk native vlan 99
+switchport trunk encapsulation dot1q
+end 

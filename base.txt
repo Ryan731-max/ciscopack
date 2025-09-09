@@ -1,0 +1,21 @@
+
+en
+conf t
+line cons 0 
+logging synchronous
+history size 200
+line vty 0 15
+logging synchronous
+history size 200
+
+do sh nat translate
+do sh standby br
+do sh standby 
+do sh 
+do sh ip route
+do sh run | section dhcp
+do sh run | section nat
+do sh run | section Port
+do sh run | section access
+do sh run | section trunk
+do sh run | section standby

@@ -1,0 +1,25 @@
+en
+conf t
+
+no ip domain-lookup
+Ipv6 unicast-routing
+hostname R1
+enable secret class
+service password-encrypted
+
+
+line console 0
+password cisco
+login
+
+line vty 0 15
+password cisco
+login
+
+
+interface vlan 1
+ip address 192.168.1.1 255.255.255.0
+
+ip route 0.0.0.0 0.0.0.0 g0/0
+
+

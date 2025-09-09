@@ -1,0 +1,46 @@
+﻿int f0/1
+switchport mode access
+switchport port-security 
+  switchport port-security mac-address 0010.11E8.3CBB
+ switchport port-security violation restrict 
+
+int range f0/2,f0/10,f0/24
+  switchport mode access 
+  switchport port-security 
+  switchport port-security maximum 4
+switchport port-security mac-address sticky 
+
+  int range g0/1-2
+  switchport mode trunk 
+  switchport port-security 
+  switchport port-security maximum 4
+  switchport port-security mac-address sticky 
+
+switchport port-security violation restrict 
+
+ 
+  int range f0/1,f0/2,f0/10,f0/24,g0/1-2
+  int range f0/1,f0/2,f0/10,f0/24
+  spanning-tree portfast 
+ 
+  int range g0/1-2
+  spanning-tree portfast trunk 
+
+
+int f0/1
+switchport mode access
+switchport port-security 
+  switchport port-security mac-address 0025.83e6.4b04
+ switchport port-security violation restrict 
+
+int range f0/2,f0/10,f0/24
+  switchport mode access 
+  switchport port-security 
+  switchport port-security maximum 4
+switchport port-security mac-address sticky 
+
+  int range g0/1-2
+  switchport mode trunk 
+  switchport port-security 
+  switchport port-security maximum 4
+  switchport port-security mac-address
